@@ -1,0 +1,21 @@
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.piece {
+    padding: 3em;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.blue {
+    background-color: aqua;
+}
+
+.yellow {
+    background-color: yellow;
+}
