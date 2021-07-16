@@ -1,108 +1,98 @@
 const checkHorizontal = ({ grid, activeRow, activeCol }) => {
-    const play = grid[activeRow][activeCol];
+  const play = grid[activeRow][activeCol];
 
-    let count = 0;
+  let count = 0;
 
-    for(let i = -3; i < 0; ++i) {
-        const piece = grid?.[activeRow]?.[activeCol + i] || 0;
+  for (let i = -3; i < 0; ++i) {
+    const piece = grid?.[activeRow]?.[activeCol + i] || 0;
 
-        if(!piece || piece !== play) break;
+    if (!piece || piece !== play) continue;
 
-        count++;
-    }
+    count++;
+  }
 
-    if (count === 3) return true;
+  for (let i = 3; i > 0; --i) {
+    const piece = grid?.[activeRow]?.[activeCol + i] || 0;
 
-    count = 0;
+    if (!piece || piece !== play) continue;
 
-    for(let i = 3; i > 0; --i) {
-        const piece = grid?.[activeRow]?.[activeCol + i] || 0;
+    count++;
+  }
 
-        if(!piece || piece !== play) break;
-
-        count++;
-    }
-
-   return count === 3;
-}
+  return count >= 3;
+};
 
 const checkVertical = ({ grid, activeRow, activeCol }) => {
-    const play = grid[activeRow][activeCol];
+  const play = grid[activeRow][activeCol];
 
-    let count = 0;
+  let count = 0;
 
-    for(let i = -3; i < 0; ++i) {
-        const piece = grid?.[activeRow + i]?.[activeCol] || 0;
-        if(!piece || piece !== play) break;
+  for (let i = -3; i < 0; ++i) {
+    const piece = grid?.[activeRow + i]?.[activeCol] || 0;
+    if (!piece || piece !== play) continue;
 
-        count++;
-    }
+    count++;
+  }
 
-    if (count === 3) return true;
+  for (let i = 3; i > 0; --i) {
+    const piece = grid?.[activeRow + i]?.[activeCol] || 0;
 
-    count = 0;
+    if (!piece || piece !== play) continue;
 
-    for(let i = 3; i > 0; --i) {
-        const piece = grid?.[activeRow + i]?.[activeCol] || 0;
-        
-        if(!piece || piece !== play) break;
+    count++;
+  }
 
-        count++;
-    }
-
-    return count === 3;
-}
+  return count === 3;
+};
 
 const checkDiagonal = ({ grid, activeRow, activeCol }) => {
-    const play = grid[activeRow][activeCol];
+  const play = grid[activeRow][activeCol];
 
-    let count = 0;
+  let count = 0;
 
-    for(let i = -3; i < 0; ++i) {
-        const piece = grid?.[activeRow + i]?.[activeCol + i] || 0;
+  for (let i = -3; i < 0; ++i) {
+    const piece = grid?.[activeRow + i]?.[activeCol + i] || 0;
 
-        if(!piece || piece !== play) break;
+    if (!piece || piece !== play) continue;
 
-        count++;
-    }
+    count++;
+  }
 
-    if (count === 3) return true;
+  for (let i = 3; i > 0; --i) {
+    const piece = grid?.[activeRow + i]?.[activeCol + i] || 0;
 
-    count = 0;
+    if (!piece || piece !== play) continue;
 
-    for(let i = 3; i > 0; --i) {
-        const piece = grid?.[activeRow + i]?.[activeCol + i] || 0;
+    count++;
+  }
 
-        if(!piece || piece !== play) break;
+  if (count >= 3) return true;
 
-        count++;
-    }
+  count = 0;
 
-    for(let i = -3; i < 0; ++i) {
-        const piece = grid?.[activeRow - i]?.[activeCol + i] || 0;
+  for (let i = -3; i < 0; ++i) {
+    const piece = grid?.[activeRow - i]?.[activeCol + i] || 0;
 
-        if(!piece || piece !== play) break;
+    if (!piece || piece !== play) continue;
 
-        count++;
-    }
+    count++;
+  }
 
-    if (count === 3) return true;
+  if (count >= 3) return true;
 
-    count = 0;
+  count = 0;
 
-    for(let i = 3; i > 0; --i) {
-        const piece = grid?.[activeRow + i]?.[activeCol - i] || 0;
+  for (let i = 3; i > 0; --i) {
+    const piece = grid?.[activeRow + i]?.[activeCol - i] || 0;
 
-        if(!piece || piece !== play) break;
+    if (!piece || piece !== play) continue;
 
-        count++;
-    }
+    count++;
+  }
 
-    return count === 3;
-}
-
+  return count >= 3;
+};
 
 export const checkWin = (game) => {
-    return checkHorizontal(game) ||  checkVertical(game) || checkDiagonal(game);
-}
-
+  return checkHorizontal(game) || checkVertical(game) || checkDiagonal(game);
+};

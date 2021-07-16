@@ -2,17 +2,29 @@
   "name": "connect-4",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
+    "prebuild": "rimraf .cache dist",
     "build": "parcel build index.html",
-    "watch": "parcel index.html",
+    "start": "parcel index.html --no-source-maps",
     "test": "jest"
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ],
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
-    "jest": "^27.0.6"
+    "cssnano": "^5.0.6",
+    "jest": "^27.0.6",
+    "parcel-bundler": "^1.12.5",
+    "postcss": "^8.3.5",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "babel-jest": "^27.0.6"

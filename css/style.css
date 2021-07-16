@@ -1,21 +1,69 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
 #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 2rem;
 }
 
 .piece {
-    padding: 3em;
-    border: 2px solid black;
-    cursor: pointer;
+  padding: 3em;
+  border: 2px solid black;
+  cursor: pointer;
 }
 
 .blue {
-    background-color: aqua;
+  background-color: aqua;
 }
 
 .yellow {
-    background-color: yellow;
+  background-color: yellow;
+}
+
+.win {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+#play-again {
+  border-radius: 12px;
+  padding: 0.5em 3em;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+p {
+  margin: 0.4rem;
+  font-size: 1.4rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .piece {
+    padding: 1rem;
+  }
+
+  .win {
+    font-size: 2rem;
+  }
 }
