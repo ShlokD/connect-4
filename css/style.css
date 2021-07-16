@@ -19,6 +19,8 @@ body {
   padding: 3em;
   border: 2px solid black;
   cursor: pointer;
+  transition: background-color 0.5s linear;
+  background-color: whitesmoke;
 }
 
 .blue {
