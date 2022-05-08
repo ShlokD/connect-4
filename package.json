@@ -1,15 +1,15 @@
 {
   "name": "connect-4",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "description": "Connect 4 implementation in Vanilla JS",
   "scripts": {
-    "prebuild": "rimraf .cache dist",
+    "prebuild": "rimraf .parcel-cache .cache dist",
     "build": "parcel build index.html --no-source-maps --public-url=https://shlokd.github.io/connect-4/",
-    "start": "parcel index.html --no-source-maps --public-url=https://shlokd.github.io/connect-4/",
+    "start:prod": "parcel index.html --no-source-maps --public-url=https://shlokd.github.io/connect-4/",
+    "start": "parcel index.html",
     "test": "jest"
   },
-  "author": "",
+  "author": "Shlok Desai",
   "license": "ISC",
   "browserslist": [
     "last 3 and_chr versions",
@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.14.7",
     "cssnano": "^5.0.6",
     "jest": "^27.0.6",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.5.0",
     "postcss": "^8.3.5",
     "rimraf": "^3.0.2"
   },
