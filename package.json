@@ -7,7 +7,8 @@
     "build": "parcel build index.html --no-source-maps --public-url=https://shlokd.github.io/connect-4/",
     "start:prod": "parcel index.html --no-source-maps --public-url=https://shlokd.github.io/connect-4/",
     "start": "parcel index.html",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "node deploy.js"
   },
   "author": "Shlok Desai",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "babel-jest": "^27.0.6"
+    "babel-jest": "^27.0.6",
+    "gh-pages": "^3.2.3"
   }
 }
