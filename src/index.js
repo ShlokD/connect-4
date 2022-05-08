@@ -41,8 +41,6 @@ const handleClick = (ev) => {
   if (checkWin({ grid, activeRow, activeCol })) {
     message.textContent = `Player ${activeNum} wins!`;
     message.classList.add("win");
-    message.classList.remove("hide");
-    message.classList.add("show");
     playAgain.classList.add("show");
     playAgain.classList.remove("hide");
 

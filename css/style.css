@@ -31,10 +31,6 @@ body {
   background-color: yellow;
 }
 
-#message {
-  transition: opacity 500ms ease-in-out;
-}
-
 
 .win {
   font-size: 4rem;
